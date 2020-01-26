@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define WIN32_LEAN_AND_MEAN
-/**********************************************
-* N.Kozak // Lviv'2018 // ACM RxCpp example   *
-*    file: acmlab6__with_rxcpp_src.cpp        *
+/***********************************************
+* N.Kozak // Lviv'2018 // ACM // RxCpp example *
+*    file: acmlab6__with_rxcpp_src.cpp         *
 ***********************************************/
 //#pragma once
 //#include "stdafx.h"
