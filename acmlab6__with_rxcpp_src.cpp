@@ -1,9 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #define WIN32_LEAN_AND_MEAN
-/***********************************************
-* N.Kozak // Lviv'2018 // ACM // RxCpp example *
-*    file: acmlab6__with_rxcpp_src.cpp         *
-***********************************************/
+/****************************************************
+* N.Kozak // Lviv'2018 // ACM // RxCpp example      *
+*    file: acmlab6__with_rxcpp_src.cpp              *
+*  (used RxCpp: https://github.com/ReactiveX/RxCpp) *
+*****************************************************/
 //#pragma once
 //#include "stdafx.h"
 
@@ -84,7 +85,8 @@ int main()
 }
 
 
-/******************************************************* RXCPP Implementation ******************************************************/
+/******************************************************* RxCpp Implementation ******************************************************/
+/*                                                https://github.com/ReactiveX/RxCpp)                                              */
 /***********************************************************************************************************************************/
 // Copyright (c) Microsoft Open Technologies, Inc. All rights reserved. See License.txt in the project root for license information.
 
