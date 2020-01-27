@@ -3,7 +3,7 @@
 /****************************************************
 * N.Kozak // Lviv'2018 // ACM // RxCpp example      *
 *    file: acmlab6__with_rxcpp_src.cpp              *
-*  (used RxCpp: https://github.com/ReactiveX/RxCpp) *
+*    used RxCpp: https://github.com/ReactiveX/RxCpp *
 *****************************************************/
 //#pragma once
 //#include "stdafx.h"
