@@ -138,10 +138,10 @@ void toDigitPosition(unsigned int currIndex){
 	pos.X = currIndex;
 	SetConsoleCursorPosition(hConsoleOutput, pos);
 #else // #elif __linux__
-	write(STDOUT_FILENO, "\033[64D", 5);
+	(void)write(STDOUT_FILENO, "\033[64D", 5);
 	if (currIndex += positionAddon){
 		sprintf(temp, "\033[%dC", currIndex);
-		write(STDOUT_FILENO, temp, strlen(temp));
+		(void)write(STDOUT_FILENO, temp, strlen(temp));
 	}
 #endif
 }
@@ -155,7 +155,7 @@ void printProductKey(unsigned char * productKey, unsigned int outOfEdgeIndex){
 #if _WIN32
 		printf("%c", value);
 #else // #elif __linux__
-		write(STDOUT_FILENO, &value, 1);
+		(void)write(STDOUT_FILENO, &value, 1);
 #endif		
 	}
 }
@@ -169,13 +169,13 @@ void printFormattedProductKey(unsigned char * productKey, unsigned int outOfEdge
 #if _WIN32
 		printf("%c", value);
 #else // #elif __linux__
-		write(STDOUT_FILENO, &value, 1);
+		(void)write(STDOUT_FILENO, &value, 1);
 #endif
 		if (!((index + 1) % GROUP_DIGITS_SIZE) && (index + 1) < DIGITS_COUNT){
 #if _WIN32
 			printf("-");
 #else // #elif __linux__
-			write(STDOUT_FILENO, "-", 1);
+			(void)write(STDOUT_FILENO, "-", 1);
 #endif			
 		}
 	}
@@ -279,15 +279,15 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 #if _WIN32
 			printf("\nThe product key is correct\n\n");
 #else // #elif __linux__
-			write(STDOUT_FILENO, "\nThe product key is correct\n\n", 29);
+			(void)write(STDOUT_FILENO, "\nThe product key is correct\n\n", 29);
 #endif				
 			printProductKey(data, outOfEdgeIndex);
 #if _WIN32
 			printf(" (COMPLETE)", 11);
 			printf("\nFor exit press Ctrl + C\n");
 #else // #elif __linux__
-			write(STDOUT_FILENO, " (COMPLETE)", 11);
-			write(STDOUT_FILENO, "\nFor exit press Ctrl + C\n", 25);
+			(void)write(STDOUT_FILENO, " (COMPLETE)", 11);
+			(void)write(STDOUT_FILENO, "\nFor exit press Ctrl + C\n", 25);
 #endif				
 			attemptsDownCount = 0;
 		}
@@ -296,14 +296,14 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 			printf("\nThe product key is not correct\n");
 			printf("\nYou have %d attempts to try\n", --attemptsDownCount);
 #else // #elif __linux__
-			write(STDOUT_FILENO, "\nThe product key is not correct\n", 32);
+			(void)write(STDOUT_FILENO, "\nThe product key is not correct\n", 32);
 			printf("\nYou have %d attempts to try\n", --attemptsDownCount);
 #endif			
 			if (attemptsDownCount){
 #if _WIN32
 				printf("Please, enter the product key:\n");
 #else // #elif __linux__
-				write(STDOUT_FILENO, "Please, enter the product key:\n", 31);
+				(void)write(STDOUT_FILENO, "Please, enter the product key:\n", 31);
 #endif	
 				printFormattedProductKey(data, outOfEdgeIndex);
 				toDigitPosition(currIndex);
@@ -313,8 +313,8 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 				printf("The product key is not entered\n");
 				printf("For exit press Ctrl + C\n");
 #else // #elif __linux__
-				write(STDOUT_FILENO, "The product key is not entered\n", 31);
-				write(STDOUT_FILENO, "For exit press Ctrl + C\n", 24);
+				(void)write(STDOUT_FILENO, "The product key is not entered\n", 31);
+				(void)write(STDOUT_FILENO, "For exit press Ctrl + C\n", 24);
 #endif				
 			}
 		}
@@ -327,7 +327,7 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 #if _WIN32
 			printf("0");
 #else // #elif __linux__
-			write(STDOUT_FILENO, "0", 1);
+			(void)write(STDOUT_FILENO, "0", 1);
 #endif			
 			toDigitPosition(currIndex);
 		}
@@ -338,7 +338,7 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 #if _WIN32
 		printf("0");
 #else // #elif __linux__
-		write(STDOUT_FILENO, "0", 1);
+		(void)write(STDOUT_FILENO, "0", 1);
 #endif		
 		toDigitPosition(currIndex);
 	}
@@ -367,7 +367,7 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 		printf("%X", data[currIndex]);
 #else // #elif __linux__
 		sprintf(chstr_, "%X", data[currIndex]);
-		write(STDOUT_FILENO, chstr_, 1);
+		(void)write(STDOUT_FILENO, chstr_, 1);
 #endif		
 		if (outOfEdgeIndex <= currIndex){
 			outOfEdgeIndex = currIndex + 1;
@@ -378,7 +378,7 @@ void inputHandler(char ch0, char ch1, char ch2, char ch3){
 #if _WIN32
 				printf("-");
 #else // #elif __linux__
-				write(STDOUT_FILENO, "-", 1);
+				(void)write(STDOUT_FILENO, "-", 1);
 #endif				
 			}
 		}
