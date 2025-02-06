@@ -10,7 +10,7 @@
 
 #ifndef TO_RXCPP_IMPLEMENTATION
 #define TO_RXCPP_IMPLEMENTATION
-#include "acmlab6__with_rxcpp_src.cpp"
+#include __FILE__
 
 #define WORK_SPACE int a = 0, b = 0
 #define EXPRESSION ( C2*a + C1*b + C0 )
