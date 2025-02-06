@@ -11,7 +11,7 @@
 
 #ifndef TO_RXCPP_IMPLEMENTATION
 #define TO_RXCPP_IMPLEMENTATION
-#include "main.cpp"
+#include __FILE__
 
 #if _WIN32
 #include <conio.h>
